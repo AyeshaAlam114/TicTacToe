@@ -4,17 +4,21 @@ using UnityEngine;
 
 public class TicTacToeGrid : Matrix
 {
-    public List<List<Cell>> cellsGrid;
+    public List<List<Cell>> cellsGrid=new List<List<Cell>>();
 
-    public delegate void CellIsCreated(int row, int col);
-    CellIsCreated cellCreated;
+    public delegate void CellIsCreated(Cell cell);
+    public CellIsCreated cellCreated;
+    int numberOfRows;
+    int numberOfColumns;
 
-   public TicTacToeGrid(int numberOfRows,int numberOfColumns) : base(numberOfRows, numberOfColumns)
+   public TicTacToeGrid(int NumberOfRows,int NumberOfColumns) : base(NumberOfRows, NumberOfColumns)
     {
-        GridInitializer(numberOfRows, numberOfColumns);
+        //GridInitializer(numberOfRows, numberOfColumns);
+        numberOfRows = NumberOfRows;
+        numberOfColumns = NumberOfColumns;
     }
 
-    public void GridInitializer(int numberOfRows, int numberOfColumns)
+    public void GridInitializer()
     {
         for (int row = 0; row < numberOfRows; row++)
         {
@@ -22,7 +26,7 @@ public class TicTacToeGrid : Matrix
             for (int col = 0; col < numberOfColumns; col++)
             {
                 cellsGrid[row].Add(new Cell());
-                cellCreated?.Invoke(row,col);
+                cellCreated?.Invoke(cellsGrid[row][col]);
             }
         }
     }

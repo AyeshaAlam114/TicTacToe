@@ -17,6 +17,11 @@ public class Cell
         statusUpdate?. Invoke(currentStatus);
        
     }
+    public void SetIndex(int row,int col)
+    {
+        rowIndex = row;
+        colIndex = col;
+    }
     public void CellInteraction()
     {
         SetStatus(Status.win);

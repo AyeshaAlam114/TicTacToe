@@ -3,19 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CellView : MonoBehaviour
+public class CellView :MonoBehaviour
 {
     public GameObject[] possibleStatus;
     public Cell cell;
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()  
     {
         cell = new Cell();
         SetStatus(Cell.Status.none);
        // DisableAllStatus();
         CellInitializer();
     }
-
+    
     public void CellInitializer()
     {
         cell.statusUpdate += SetStatus;
