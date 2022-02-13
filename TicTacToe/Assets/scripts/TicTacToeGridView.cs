@@ -33,7 +33,8 @@ public class TicTacToeGridView : MonoBehaviour
         TicTacToeGrid grid = new TicTacToeGrid(numberOfRows, numberOfCol);
         grid.cellCreated += CellCreator;
         grid.GridInitializer();
-       
+
+
     }
 
     Vector3 PositionSetter()
@@ -49,16 +50,20 @@ public class TicTacToeGridView : MonoBehaviour
         {
             Debug.Log("2--------");
             Debug.Log(nextLineIndicator);
+            SpawnPosition.position = VerticalShift();
             nextLineIndicator = 0;
-            return SpawnPosition.position= VerticalShift();
+            nextLineIndicator++;
+            return SpawnPosition.position;
         }
+        
+
     }
 
     private Vector3 VerticalShift()
     {
         
         float incrementX = 2.5f;
-        float incrementZ = SpawnPosition.position.y - 1.5f;
+        float incrementZ = SpawnPosition.position.z - 1.5f;
         return new Vector3(incrementX, SpawnPosition.position.y, incrementZ);
     }
 
@@ -72,7 +77,7 @@ public class TicTacToeGridView : MonoBehaviour
     {
         //Debug.Log("ss");
         CellView cellView = Instantiate(cellPrefab, PositionSetter(), Quaternion.identity).GetComponent<CellView>();
+        cellView.SetCell(cell);
         //SpawnPosition.position = cellView.transform.position;
-      //  cellView.cell.SetIndex();
     }
 }
