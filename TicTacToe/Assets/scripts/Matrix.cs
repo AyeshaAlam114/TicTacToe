@@ -5,7 +5,7 @@ using System;
 
 public class Matrix 
 {
-     List<List<int>> matrixHolder=new List<List<int>>();
+      protected List<List<int>> matrixHolder=new List<List<int>>();
 
 
    

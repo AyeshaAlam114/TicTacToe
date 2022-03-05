@@ -29,7 +29,7 @@ public class Cell
     }
     public void SetStatus(int CurrentStatus)
     {
-        Debug.Log("1");
+       // Debug.Log("1");
         currentStatus = (Status)CurrentStatus;
         statusUpdate?.Invoke(currentStatus);
 
@@ -44,7 +44,7 @@ public class Cell
     //}
     public void CellInteraction()
     {
-        Debug.Log("cell is not set");
+       // Debug.Log("cell is not set");
        // SetStatus(Status.win);
         cellStatusUpdate?.Invoke(rowIndex,colIndex);
 

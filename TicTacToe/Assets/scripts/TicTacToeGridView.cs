@@ -41,15 +41,15 @@ public class TicTacToeGridView : MonoBehaviour
     {
         if (nextLineIndicator < numberOfCol)
         {
-            Debug.Log("1--------");
-            Debug.Log(nextLineIndicator);
+            //Debug.Log("1--------");
+            //Debug.Log(nextLineIndicator);
             nextLineIndicator++;
             return SpawnPosition.position = HorizontalShift();
         }
         else
         {
-            Debug.Log("2--------");
-            Debug.Log(nextLineIndicator);
+            //Debug.Log("2--------");
+            //Debug.Log(nextLineIndicator);
             SpawnPosition.position = VerticalShift();
             nextLineIndicator = 0;
             nextLineIndicator++;

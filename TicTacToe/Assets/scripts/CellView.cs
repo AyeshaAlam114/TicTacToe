@@ -34,20 +34,20 @@ public class CellView :MonoBehaviour
 
     public void SetStatus(Cell.Status currentStatus)
     {
-        Debug.Log("2");
+       // Debug.Log("2");
         DisableAllStatus();
         EnableCurrentStatus((int)currentStatus);
     }
 
     private void EnableCurrentStatus(int indexOfStatus)
     {
-        Debug.Log("4");
+       // Debug.Log("4");
         possibleStatus[indexOfStatus].SetActive(true);
     }
 
     private void DisableAllStatus()
     {
-        Debug.Log("3");
+       // Debug.Log("3");
         foreach (GameObject status in possibleStatus)
             status.SetActive(false);
     }
